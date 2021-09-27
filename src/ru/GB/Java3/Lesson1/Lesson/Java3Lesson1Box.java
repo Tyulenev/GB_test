@@ -14,7 +14,7 @@ public class Java3Lesson1Box<T extends Number> {
         for (int i = 0; i < arr.length; i++) {
            d += arr[i].doubleValue();
         }
-        return d/ arr.length;
+        return d/arr.length;
     }
 
     public double sum() {
@@ -24,6 +24,7 @@ public class Java3Lesson1Box<T extends Number> {
         }
         return d;
     }
+
 
     public boolean sameAvg(Java3Lesson1Box<?> another) {
         return Math.abs(this.avg() - another.avg()) < 0.0001;
