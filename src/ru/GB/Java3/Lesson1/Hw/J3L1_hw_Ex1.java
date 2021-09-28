@@ -25,8 +25,7 @@ public class J3L1_hw_Ex1 {
         }
         System.out.println();
 
-        T addEl;
-        addEl = arr[n1];
+        T addEl = arr[n1];
         arr[n1] = arr[n2];
         arr[n2] = addEl;
 

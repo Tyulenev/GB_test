@@ -5,17 +5,18 @@ import java.util.ArrayList;
 public class J3L1HWBox  <T extends J3L1HWFruit> {
     private ArrayList<T> alFruits = new ArrayList<>();
 
+
+
     public float getWeight() {
-        float w1 =1f;
-        if (!alFruits.isEmpty()) {
-            if (alFruits.get(0) instanceof J3L1HWApple) w1 = 1f;
-            else if (alFruits.get(0) instanceof J3L1HWOrange) w1 = 1.5f;
+        float weightSum = 0f;
+        for (T fruit:alFruits) {
+            weightSum += fruit.getWeight();
         }
-        else  {
-            w1 = 0f;
-            System.out.println("Коробка пока что пуста");
-        }
-        return alFruits.size()*w1;
+        return weightSum;
+    }
+
+    public boolean compare(J3L1HWBox<?> another) {
+        return (getWeight() - another.getWeight()) < 0.001;
     }
 
     public void pourOutAllFruits(J3L1HWBox anotherBox) {
